@@ -6,16 +6,16 @@ public class Producto {
     private Integer codigo;
     private String nombre;
     private Double precio;
-    private Integer codigo_fabricante;
+    private Fabricante fabricante;
 
     public Producto() {
     }
 
-    public Producto(Integer codigo, String nombre, Double precio, Integer codigo_fabricante) {
+    public Producto(Integer codigo, String nombre, Double precio, Fabricante fabricante) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
-        this.codigo_fabricante = codigo_fabricante;
+        fabricante = new Fabricante();
     }
 
     public Integer getCodigo() {
@@ -42,17 +42,17 @@ public class Producto {
         this.precio = precio;
     }
 
-    public Integer getCodigoFabricante() {
-        return codigo_fabricante;
+    public Fabricante getFabricante() {
+        return fabricante;
     }
 
-    public void setCodigoFabricante(Integer codigo_fabricante) {
-        this.codigo_fabricante = codigo_fabricante;
+    public void setFabricante(Fabricante fabricante) {
+        this.fabricante = fabricante;
     }
 
     @Override
     public String toString() {
-        return String.format("PRODUCTO (Codigo: %s, Nombre: %s, Precio: %.2f, Codigo del fabricante: %d)" ,codigo, nombre, precio, codigo_fabricante);
+        return String.format("PRODUCTO (Codigo: %s, Nombre: %s, Precio: %.2f, Codigo del fabricante: %d)" ,codigo, nombre, precio, fabricante);
     }
     
     
